@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🌺 가호회 장부</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border-color: #e2e8f0;
+            --income-color: #16a34a;
+            --expense-color: #dc2626;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --shadow-sm: 0 2px 6px rgba(0,0,0,0.04);
+            --shadow-md: 0 6px 16px rgba(79, 70, 229, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .mobile-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+        }
+
+        /* 헤더 디자인 */
+        header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 26px 20px 22px 20px;
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .header-title {
+            font-size: 22px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .badge-balance {
+            background: rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(6px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .summary-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .summary-item .label {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .summary-item .val {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        /* 💡 수정 포인트: 헤더 높이에 맞게 sticky 고정 위치를 매끄럽게 처리 */
+        .tab-section {
+            display: flex;
+            background: var(--card-bg);
+            padding: 12px 20px;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 176px; /* 헤더 바로 아래에 딱 붙도록 고정 */
+            z-index: 90;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 11px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-sub);
+            border: 1px solid var(--border-color);
+            background: #f8fafc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active {
+            color: #ffffff;
+            background-color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        /* 메인 리스트 영역 */
+        main {
+            padding: 18px 20px 40px 20px;
+            flex: 1;
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .history-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: transform 0.15s ease, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .history-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+        }
+
+        .history-card:active {
+            transform: scale(0.98);
+        }
+
+        .history-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .icon-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .icon-income { background: linear-gradient(135deg, #22c55e, #15803d); }
+        .icon-expense { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+        .icon-link { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+
+        .history-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .history-info .title {
+            font-size: 15px;
+            font-weight: 750;
+            color: var(--text-main);
+            line-height: 1.35;
+            letter-spacing: -0.3px;
+            
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: keep-all;
+        }
+
+        .history-info .date {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .history-right {
+            text-align: right;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .amount-income {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--income-color);
+            letter-spacing: -0.3px;
+        }
+
+        .amount-expense {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--expense-color);
+            letter-spacing: -0.3px;
+        }
+
+        .link-badge-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid #dbeafe;
+            white-space: nowrap;
+        }
+
+        .balance-text {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 3px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: var(--text-sub);
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+    </style>
+ </head>
+ <body>
+  <div class="mobile-container">
+   <header>
+    <div class="header-top">
+     <div class="header-title">
+      <i class="fa-solid fa-users"></i> 가호회 장부
+     </div>
+     <div class="badge-balance" id="currentBalanceBadge">잔액: 계산중...</div>
+    </div>
+    <div class="summary-card">
+     <div class="summary-item">
+      <div class="label">총 입금액</div>
+      <div class="val" id="totalIncomeVal">0원</div>
+     </div>
+     <div class="summary-item">
+      <div class="label">총 출금액</div>
+      <div class="val" id="totalExpenseVal">0원</div>
+     </div>
+    </div>
+   </header>
+   <div class="tab-section">
+    <button class="tab-btn active" onclick="setTab('all', this)">전체 내역</button>
+    <button class="tab-btn" onclick="setTab('입금', this)">입금만</button>
+    <button class="tab-btn" onclick="setTab('출금', this)">출금만</button>
+   </div>
+   <main>
+    <div class="list-container" id="historyList"></div>
+   </main>
+   <footer>
+    <p>© 가호회. 모임 내역 및 회비 입출금 현황</p>
+   </footer>
+  </div>
+  <script>
+    let historyData = [];
+    let currentFilter = 'all';
+
+    async function loadData() {
+        try {
+            const response = await fetch('data.json');
+            const rawData = await response.json();
+            
+            let runningBalance = 0;
+            historyData = rawData.map(item => {
+                const amount = item.amount || 0;
+                if (item.type === '입금') {
+                    runningBalance += amount;
+                } else if (item.type === '출금') {
+                    runningBalance -= amount;
+                }
+                return { ...item, calcBalance: runningBalance };
+            });
+
+            renderList();
+        } catch (error) {
+            console.error('데이터를 불러오는데 실패했습니다.', error);
+        }
+    }
+
+    function renderList() {
+        const container = document.getElementById('historyList');
+        container.innerHTML = '';
+
+        let totalIncome = 0;
+        let totalExpense = 0;
+        let lastBalance = 0;
+
+        historyData.forEach(item => {
+            if (item.type === '입금') totalIncome += item.amount;
+            if (item.type === '출금') totalExpense += item.amount;
+            lastBalance = item.calcBalance;
+        });
+
+        document.getElementById('totalIncomeVal').innerText = totalIncome.toLocaleString() + '원';
+        document.getElementById('totalExpenseVal').innerText = totalExpense.toLocaleString() + '원';
+        document.getElementById('currentBalanceBadge').innerText = '잔액: ' + lastBalance.toLocaleString() + '원';
+
+        const filtered = historyData.filter(item => {
+            if (currentFilter === 'all') return true;
+            return item.type === currentFilter;
+        });
+
+        filtered.forEach(item => {
+            const hasLink = Boolean(item.link);
+            const isPureLink = item.type === '링크' || (hasLink && item.amount === 0);
+
+            const card = document.createElement(hasLink ? 'a' : 'div');
+            card.className = 'history-card';
+
+            if (hasLink) {
+                card.href = item.link;
+                card.target = "_blank";
+                card.rel = "noopener noreferrer";
+                card.style.textDecoration = "none";
+                card.style.color = "inherit";
+            }
+
+            const isIncome = item.type === '입금';
+            const isExpense = item.type === '출금';
+            
+            const iconClass = isPureLink ? 'icon-link' : (isIncome ? 'icon-income' : 'icon-expense');
+            const iconSymbol = isPureLink ? 'fa-images' : (isIncome ? 'fa-arrow-down' : 'fa-arrow-up');
+
+            card.innerHTML = `
+                <div class="history-left">
+                    <div class="icon-circle ${iconClass}">
+                        <i class="fa-solid ${iconSymbol}"></i>
+                    </div>
+                    <div class="history-info">
+                        <div class="title">
+                            ${item.content}
+                            ${hasLink ? '<i class="fa-solid fa-link" style="font-size:11px; margin-left:4px; color:#3b82f6;"></i>' : ''}
+                        </div>
+                        <div class="date">${item.date || '기록 항목'}</div>
+                    </div>
+                </div>
+                <div class="history-right">
+                    ${isIncome ? `<div class="amount-income">+${item.amount.toLocaleString()}원</div>` : ''}
+                    ${isExpense ? `<div class="amount-expense">-${item.amount.toLocaleString()}원</div>` : ''}
+                    ${isPureLink ? `<div class="link-badge-text"><i class="fa-solid fa-arrow-up-right-from-square"></i> 보기</div>` : ''}
+                    ${!isPureLink ? `<div class="balance-text">잔액: ${item.calcBalance.toLocaleString()}원</div>` : ''}
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function setTab(filter, element) {
+        currentFilter = filter;
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        element.classList.add('active');
+        renderList();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadData);
+</script>
+ </body>
+</html>
