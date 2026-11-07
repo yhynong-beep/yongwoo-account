@@ -24,7 +24,7 @@
     "date": "2026. 03. 21",
     "content": "함안 사진",
     "type": "링크",
-    "amount": 200000,
+    "amount": 0,
     "link": "https://yongwoo-account.vercel.app/함안사진.html"
   },
   {
@@ -35,12 +35,6 @@
     "link": "https://yongwoo-account.vercel.app/이자경비.html"
   },
   {
-    "date": "2025. 05. 20",
-    "content": "인숙 시부상",
-    "type": "출금",
-    "amount": 200000
-  },
-  {
     "date": "2026. 06. 20",
     "content": "의령 사진",
     "type": "링크",
@@ -48,98 +42,24 @@
     "link": "https://yongwoo-account.vercel.app/의령사진.html"
   },
   {
-    "date": "2025. 05. 24 ~ 05. 25",
-    "content": "울산 경비",
-    "type": "출금",
-    "amount": 1432090,
-    "link": "https://gahoe-account.vercel.app/울산경비.html"
-  },
-  {
-    "date": "2025. 05. 25",
-    "content": "울산 영상",
+    "date": "2026. 06. 20",
+    "content": "의령 경비",
     "type": "링크",
     "amount": 0,
-    "link": "https://gahoe-account.vercel.app/울산영상.html"
+    "link": "https://yongwoo-account.vercel.app/의령경비.html"
   },
   {
-    "date": "2025. 05월 ~ 현재",
-    "content": "이자 및 필요경비",
-    "type": "입금",
-    "amount": 6448,
-    "link": "https://docs.google.com/spreadsheets/d/1bCn8y7oud17SmuWL6JVi2O5TeptD4c9i2-YLAcF64ZM/edit?usp=drivesdk"
-  },
-  {
-    "date": "2025. 05. 31",
-    "content": "용주 자혼",
-    "type": "출금",
-    "amount": 200000,
-    "link": "https://docs.google.com/spreadsheets/d/1U-qDFua0Fs59FTrodK0E5QC-v9KLfdW_2fl1qhFLmXE/edit?usp=drivesdk"
-  },
-  {
-    "date": "2025. 09. 08",
-    "content": "홍권 본인상",
-    "type": "출금",
-    "amount": 200000
-  },
-  {
-    "date": "2025. 09. 10",
-    "content": "류홍권 찬조",
-    "type": "입금",
-    "amount": 100000
-  },
-  {
-    "date": "2026. 01. 31",
-    "content": "명희 여혼",
-    "type": "출금",
-    "amount": 200000,
-    "link": "https://docs.google.com/spreadsheets/d/1hY22xZN6Tq-FgsdY2F4Qo_kyC98wEUOkLCpiau2IcJE/edit?usp=drivesdk"
-  },
-  {
-    "date": "2026. 01. 01",
-    "content": "2026년 회비 및 찬조",
-    "type": "입금",
-    "amount": 7580000,
-    "link": "https://docs.google.com/spreadsheets/d/1qkyvo3IfLwHP7ZK7dUljGEGnhwKdQEt79eifce0h1fs/edit?gid=1913885462#gid=1913885462"
-  },
-  {
-    "date": "2026. 05. 23 ~ 05. 25",
-    "content": "목포 신안 경비",
-    "type": "출금",
-    "amount": 10676140,
-    "link": "https://docs.google.com/spreadsheets/d/1acOkvif6UIygyD_SkFOD3QeGBJRG3yOJkyU-GXnybhw/edit?gid=1024390368#gid=1024390368"
-  },
-  {
-    "date": "2026. 05. 25",
-    "content": "목포 신안 영상",
+    "date": "2026. 10. 05",
+    "content": "창녕 사진",
     "type": "링크",
     "amount": 0,
-    "link": "https://docs.google.com/spreadsheets/d/1YRklQbcR3KDdv_YpTlgwemRWdzPiG7sNyB-wA7y_w8Y/edit?usp=drivesdk"
+    "link": "https://yongwoo-account.vercel.app/창렁사진.html"
   },
   {
-    "date": "2026. 05. 23 ~ 05. 25",
-    "content": "추가 경비 각출",
-    "type": "입금",
-    "amount": 798000,
-    "link": "https://docs.google.com/spreadsheets/u/0/d/1qkyvo3IfLwHP7ZK7dUljGEGnhwKdQEt79eifce0h1fs/htmlview#gid=1679716915"
-  },
-  {
-    "date": "2026. 05. 26",
-    "content": "추후 찬조",
-    "type": "입금",
-    "amount": 134000,
-    "link": "https://docs.google.com/spreadsheets/d/1U7xRJnKm037_czml0GT79zTEbLJ2DsZAN6uUsqAMxaw/edit?usp=drivesdk"
-  },
-  {
-    "date": "2026. 08. 22",
-    "content": "위웅 모친상",
-    "type": "출금",
-    "amount": 200000
-  },
-  {
-    "date": "",
-    "content": "추억의 게임방",
+    "date": "2026. 10. 05",
+    "content": "창녕 경비",
     "type": "링크",
     "amount": 0,
-    "link": "https://minigame-heaven-opal.vercel.app/"
+    "link": "https://yongwoo-account.vercel.app/창령경비.html"
   }
 ]
