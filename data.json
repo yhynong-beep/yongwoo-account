@@ -9,8 +9,8 @@
   {
     "date": "2026. 03. 21 ~ 현재",
     "content": "용우회 회비",
-    "type": "링크",
-    "amount": 0,
+    "type": "입금",
+    "amount": 460000,
     "link": "https://yongwoo-account.vercel.app/용우회비.html"
 },
   {
@@ -30,8 +30,8 @@
   {
     "date": "2026. 03. 21 ~ 현재",
     "content": "이자 및 필요 경비",
-    "type": "링크",
-    "amount": 0
+    "type": "입금",
+    "amount": 1471,
     "link": "https://yongwoo-account.vercel.app/이자경비.html"
   },
   {
@@ -44,8 +44,8 @@
   {
     "date": "2026. 06. 20",
     "content": "의령 경비",
-    "type": "링크",
-    "amount": 0,
+    "type": "출금",
+    "amount": 287000,
     "link": "https://yongwoo-account.vercel.app/의령경비.html"
   },
   {
@@ -53,13 +53,13 @@
     "content": "창녕 사진",
     "type": "링크",
     "amount": 0,
-    "link": "https://yongwoo-account.vercel.app/창렁사진.html"
+    "link": "https://yongwoo-account.vercel.app/창령사진.html"
   },
   {
     "date": "2026. 10. 05",
     "content": "창녕 경비",
-    "type": "링크",
-    "amount": 0,
+    "type": "출금",
+    "amount": 298500,
     "link": "https://yongwoo-account.vercel.app/창령경비.html"
   }
 ]
