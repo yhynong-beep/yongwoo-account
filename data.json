@@ -61,5 +61,12 @@
     "type": "출금",
     "amount": 298500,
     "link": "https://yongwoo-account.vercel.app/창녕경비.html"
+  },
+  {
+    "date": "",
+    "content": "추억의 게임방",
+    "type": "링크",
+    "amount": 0,
+    "link": "https://yongwoo-account.vercel.app/창녕경비.html"
   }
 ]
