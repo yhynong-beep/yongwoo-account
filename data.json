@@ -1,5 +1,12 @@
 [
   {
+    "date": "",
+    "content": "운영 지침",
+    "type": "링크",
+    "amount": 0,
+    "link": "https://yongwoo-account.vercel.app/운영지침.html"
+  },
+  {
     "date": "2026. 03. 01",
     "content": "이월금",
     "type": "입금",
@@ -13,13 +20,6 @@
     "amount": 460000,
     "link": "https://docs.google.com/spreadsheets/d/1XhemwB5J_roSsawWzmaFD5BizIPb8zh9N57TTNzBNAI/edit?usp=sharing"
 },
-  {
-    "date": "",
-    "content": "운영 지침",
-    "type": "링크",
-    "amount": 0,
-    "link": "https://yongwoo-account.vercel.app/운영지침.html"
-  },
   {
     "date": "2026. 03. 21",
     "content": "함안 사진",
