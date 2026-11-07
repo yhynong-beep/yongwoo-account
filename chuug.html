@@ -358,9 +358,9 @@
    <header>
     <div class="header-top">
      <div class="header-title">
-      <i class="fa-solid fa-gamepad"></i> 미니게임 천국
+      <i class="fa-solid fa-gamepad"></i> 추억의 게임방
      </div>
-     <div class="badge-count" id="gameCount">50개</div>
+     <div class="badge-count" id="gameCount">51개</div>
     </div>
     <button class="share-banner-btn" onclick="shareSite()"><i class="fa-solid fa-share-nodes"></i> 친구들에게 게임방 링크 공유하기</button>
    </header>
@@ -385,7 +385,7 @@
     </div>
    </main>
    <footer>
-    <p>© 미니게임 천국. 원하는 게임을 터치하여 바로 플레이하세요!</p>
+    <p>© 추억의 게임방. 원하는 게임을 터치하여 바로 플레이하세요!</p>
    </footer>
   </div>
   <div class="toast" id="toast">
@@ -394,7 +394,6 @@
   <script>
     // 50개 고유 게임 목록 ("사진 퀴즈" 제거)
     const gamesData = [
-        { name: "고도리 게임", url: "https://matgo-1v1-whatu.vercel.app/", cat: "보드", icon: "fa-cards", color: "linear-gradient(135deg, #ef4444, #b91c1c)" },
         { name: "장기두기", url: "https://jangi-seven.vercel.app/", cat: "보드", icon: "fa-chess-king", color: "linear-gradient(135deg, #b45309, #78350f)" },
         { name: "블록깨기", url: "https://block-breaker-vert-nine.vercel.app/", cat: "아케이드", icon: "fa-cubes", color: "linear-gradient(135deg, #3b82f6, #1d4ed8)" },
         { name: "블록쌓기", url: "https://block-stacking.vercel.app/", cat: "아케이드", icon: "fa-layer-group", color: "linear-gradient(135deg, #10b981, #047857)" },
@@ -513,7 +512,7 @@
     function shareSite() {
         const shareData = {
             title: '🎮 추억의 게임방',
-            text: '심심할 때 즐기는 미니게임 모음집! 바로 와서 플레이해보세요.',
+            text: '심심할 때 즐기는 추억의 게임 모음집! 바로 와서 플레이해보세요.',
             url: window.location.href
         };
 
