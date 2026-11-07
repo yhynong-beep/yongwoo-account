@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>용우회 운영 지침</title>
+<meta property="og:title" content="용우회 운영 지침">
+<meta property="og:description" content="정기 모임 · 회장 임기 · 장소 순서 · 회비 및 통장">
+<style>
+:root{
+  --bg1:#12153a; --bg2:#4b2a8a; --ink:#16182f; --sub:#4a4f75; --soft:#f3f1ff; --line:#e6e3fa;
+  --p1:#4b6bff; --p2:#8a3fe4; --gold:#ffd86b; --gold2:#f5b942;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(760px 420px at 88% -4%,rgba(255,216,107,.26),transparent 62%),
+    radial-gradient(640px 400px at -8% 22%,rgba(110,140,255,.22),transparent 60%),
+    linear-gradient(165deg,var(--bg1) 0%,#31208a 56%,var(--bg2) 100%) fixed;
+  min-height:100vh;
+  padding:max(24px,env(safe-area-inset-top)) 16px max(44px,env(safe-area-inset-bottom));
+}
+.wrap{max-width:520px;margin:0 auto}
+
+/* ── 머리글 ── */
+header{text-align:center;color:#fff;padding:22px 0 30px}
+h1{font-size:40px;font-weight:900;letter-spacing:-.03em;line-height:1.18}
+h1 em{font-style:normal;color:var(--gold)}
+.tag{margin-top:12px;font-size:19px;font-weight:600;opacity:.9}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:18px;color:var(--gold);font-size:16px}
+.orn::before,.orn::after{content:"";height:1px;width:64px;background:linear-gradient(90deg,transparent,rgba(255,216,107,.8))}
+.orn::after{transform:scaleX(-1)}
+
+/* ── 카드 ── */
+.card{position:relative;overflow:hidden;background:#fff;border-radius:28px;margin-top:20px;padding:28px 20px 24px;
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 16px 40px rgba(8,6,48,.36)}
+.card::before{content:"";position:absolute;left:0;top:0;right:0;height:6px;background:linear-gradient(90deg,var(--p1),var(--p2))}
+.card h2{display:flex;align-items:center;gap:12px;font-size:26px;font-weight:900;letter-spacing:-.025em;padding-bottom:16px;margin-bottom:18px;border-bottom:2px solid var(--line)}
+.num{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:21px;font-weight:900;color:#fff;flex-shrink:0;
+  background:linear-gradient(135deg,var(--p1),var(--p2));box-shadow:0 5px 12px rgba(110,70,220,.42)}
+.lab{font-size:17px;font-weight:800;color:var(--sub);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.lab::before{content:"";width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--p1),var(--p2))}
+.lab + .lab,.pill + .lab{margin-top:20px}
+
+/* ── 1. 일정 ── */
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.months div{text-align:center;padding:18px 0 16px;border-radius:20px;font-weight:900;font-size:36px;line-height:1;color:#fff;
+  background:linear-gradient(145deg,var(--p1),var(--p2));box-shadow:0 8px 16px rgba(90,60,200,.3),inset 0 1px 0 rgba(255,255,255,.35)}
+.months small{font-size:17px;font-weight:800;margin-left:2px;opacity:.95}
+.pill{margin-top:14px;display:flex;align-items:center;gap:10px;padding:16px 18px;border-radius:18px;background:var(--soft);font-size:22px;font-weight:600;line-height:1.4}
+.pill i{font-style:normal;font-size:26px}
+.pill b{font-weight:900;color:#5a35c8}
+
+/* ── 2·3. 순서 ── */
+.order{list-style:none;display:grid;gap:10px}
+.order li{display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:18px;background:var(--soft);font-size:24px;font-weight:800;letter-spacing:-.01em}
+.order li i{font-style:normal;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-size:20px;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--p1),var(--p2));box-shadow:0 4px 10px rgba(110,70,220,.32)}
+.order li span{font-weight:600;color:var(--sub);font-size:21px;margin-left:2px}
+
+/* ── 4. 회비 ── */
+.fee{position:relative;text-align:center;padding:24px 16px;border-radius:22px;background:linear-gradient(135deg,#eeeaff,#fff);box-shadow:inset 0 0 0 2px #d9d1ff}
+.fee .t{font-size:18px;color:var(--sub);font-weight:800}
+.fee .v{font-size:58px;font-weight:900;letter-spacing:-.03em;line-height:1.15;margin-top:4px;
+  background:linear-gradient(90deg,#2a2f8f,#7b3fe4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fee .v small{font-size:28px}
+.extra{font-size:22px;line-height:1.55;font-weight:600;padding:4px 2px 0}
+
+.bank{position:relative;overflow:hidden;margin-top:22px;border-radius:24px;padding:22px 20px 20px;color:#fff;
+  background:linear-gradient(135deg,#14173d 0%,#3a2490 55%,#5b2fb0 100%);box-shadow:0 14px 28px rgba(30,20,100,.45)}
+.bank::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,216,107,.35),transparent 68%)}
+.bank .chip{width:46px;height:34px;border-radius:7px;background:linear-gradient(135deg,#ffe9a3,var(--gold2));position:relative;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.bank .chip::before,.bank .chip::after{content:"";position:absolute;left:0;right:0;height:1px;background:rgba(0,0,0,.2)}
+.bank .chip::before{top:11px}.bank .chip::after{top:22px}
+.bank .b{font-size:18px;font-weight:700;opacity:.92;margin-top:16px}
+.bank .n{font-size:31px;font-weight:900;letter-spacing:.03em;margin:8px 0 18px;word-break:break-all;color:var(--gold);position:relative;z-index:1}
+.bank button{position:relative;z-index:1;font:inherit;font-size:21px;font-weight:900;border:0;border-radius:16px;padding:16px 0;width:100%;
+  background:linear-gradient(180deg,#ffe28a,var(--gold2));color:#3a2a00;cursor:pointer;box-shadow:0 6px 14px rgba(245,185,66,.4)}
+.bank button:active{transform:scale(.98)}
+
+/* ── 맺음 ── */
+footer{text-align:center;color:#fff;margin-top:34px;padding:0 6px}
+footer .orn{margin:0 0 14px}
+footer p{font-size:22px;font-weight:800;line-height:1.6;letter-spacing:-.01em}
+footer p span{color:var(--gold)}
+
+/* ── 등장 효과 ── */
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.card,header,footer{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
+.card:nth-of-type(1){animation-delay:.08s}.card:nth-of-type(2){animation-delay:.16s}
+.card:nth-of-type(3){animation-delay:.24s}.card:nth-of-type(4){animation-delay:.32s}
+@media (prefers-reduced-motion:reduce){.card,header,footer{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>용우회 <em>운영 지침</em></h1>
+    <p class="tag">우리 모임의 약속</p>
+    <div class="orn">◆</div>
+  </header>
+
+  <section class="card">
+    <h2><span class="num">1</span>정기 모임 일정</h2>
+    <div class="lab">시기</div>
+    <div class="months">
+      <div>3<small>월</small></div><div>6<small>월</small></div><div>9<small>월</small></div><div>12<small>월</small></div>
+    </div>
+    <div class="pill"><i>🗓️</i><span>매년 <b>셋째주 토요일</b></span></div>
+    <div class="lab">비고</div>
+    <div class="pill" style="margin-top:0"><i>🏡</i><span>연 1회 <b>1박 2일</b> 진행</span></div>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">2</span>회장 및 임기</h2>
+    <div class="lab">2년 단임제 (순번제)</div>
+    <ul class="order">
+      <li><i>1</i>류홍률 회원님</li>
+      <li><i>2</i>류위웅 회원님</li>
+      <li><i>3</i>류연종 회원님</li>
+      <li><i>4</i>류해수 회원님</li>
+      <li><i>5</i>류영형 회원님</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">3</span>모임 장소 정하기 순서</h2>
+    <div class="lab">모임 장소는 회원들이 순서대로 지정</div>
+    <ul class="order">
+      <li><i>1</i>류홍률 회원님</li>
+      <li><i>2</i>류영형 회원님</li>
+      <li><i>3</i>류위웅 회원님</li>
+      <li><i>4</i>류연종 회원님</li>
+      <li><i>5</i>류해수 회원님</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">4</span>회비 및 통장</h2>
+    <div class="fee"><div class="t">정기 회비 (월)</div><div class="v">20,000<small>원</small></div></div>
+    <div class="lab" style="margin-top:20px">추가 경비</div>
+    <p class="extra">특별 행사 시 추가 각출 가능</p>
+    <div class="bank">
+      <div class="chip"></div>
+      <div class="b">카카오뱅크 (모임통장)</div>
+      <div class="n" id="acct">3333-36-9402580</div>
+      <button type="button" onclick="copyAcct(this)">📋 계좌번호 복사</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="orn">◆</div>
+    <p><span>★</span> 용우회의 발전을 기원합니다. <span>★</span></p>
+  </footer>
+</div>
+<script>
+function copyAcct(btn){
+  var txt='3333-36-9402580', o=btn.textContent;
+  var done=function(){btn.textContent='✓ 복사되었습니다';setTimeout(function(){btn.textContent=o},1800)};
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback);return}
+  }catch(e){}
+  fallback();
+  function fallback(){
+    try{
+      var t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+    }catch(e){btn.textContent='길게 눌러 복사하세요'}
+  }
+}
+</script>
+</body>
+</html>
