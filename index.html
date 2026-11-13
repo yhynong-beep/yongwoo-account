@@ -289,6 +289,19 @@
             border-top: 1px solid var(--border-color);
             margin-top: auto;
         }
+
+        /* 위/아래 이동 버튼 (탭 줄) */
+        .jump-btn {
+            flex: 0 0 38px;
+            width: 38px;
+            padding: 0;
+            border: 1px solid var(--border-color);
+            background: #f8fafc;
+            color: var(--primary);
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+        }
     </style>
  </head>
  <body>
@@ -296,7 +309,7 @@
    <header>
     <div class="header-top">
      <div class="header-title">
-      <i class="fa-solid fa-users"></i> 용우회 장부
+      <i class="fa-solid fa-users"></i> 가호회 장부
      </div>
      <div class="badge-balance" id="currentBalanceBadge">잔액: 계산중...</div>
     </div>
@@ -315,12 +328,14 @@
     <button class="tab-btn active" onclick="setTab('all', this)">전체 내역</button>
     <button class="tab-btn" onclick="setTab('입금', this)">입금만</button>
     <button class="tab-btn" onclick="setTab('출금', this)">출금만</button>
+    <button class="jump-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="맨 위로"><i class="fa-solid fa-arrow-up"></i></button>
+    <button class="jump-btn" onclick="window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'})" aria-label="맨 아래로"><i class="fa-solid fa-arrow-down"></i></button>
    </div>
    <main>
     <div class="list-container" id="historyList"></div>
    </main>
    <footer>
-    <p>© 용우회. 모임 내역 및 회비 입출금 현황</p>
+    <p>© 가호회. 모임 내역 및 회비 입출금 현황</p>
    </footer>
   </div>
   <script>
