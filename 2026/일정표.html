@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>통영·고성 1박 2일 일정</title>
+<title>용우회 1박 2일 일정</title>
 
 <style>
 :root{
@@ -171,27 +171,6 @@ tr.rest td.a b{
   color:#166534;
 }
 
-/* 주소 복사 버튼 */
-.cp{
-  display:inline-block;
-  margin:10px 0 2px 0;
-  padding:8px 14px;
-  border:1.5px solid #3b82f6;
-  border-radius:10px;
-  background:#eff6ff;
-  color:#1d4ed8;
-  font-size:16px;
-  font-weight:900;
-  font-family:inherit;
-  cursor:pointer;
-}
-
-.cp.ok{
-  background:#1d4ed8;
-  color:#ffffff;
-  border-color:#1d4ed8;
-}
-
 /* 작은 스마트폰 대응 */
 @media(max-width:380px){
   body{padding:12px 4px 25px}
@@ -204,7 +183,6 @@ tr.rest td.a b{
   td.a b{font-size:19px}
   td small{font-size:16px}
   th{font-size:15px}
-  .cp{font-size:15px; padding:7px 11px;}
 }
 </style>
 </head>
@@ -345,70 +323,6 @@ tr.rest td.a b{
 </tbody>
 </table>
 </div>
-
-<script>
-(function(){
-
-function copy(t){
-  if(navigator.clipboard &&
-     navigator.clipboard.writeText){
-    return navigator.clipboard.writeText(t)
-      .catch(function(){return fb(t)});
-  }
-  return fb(t);
-}
-
-function fb(t){
-  return new Promise(function(res,rej){
-    try{
-      var a=document.createElement('textarea');
-      a.value=t;
-      a.style.position='fixed';
-      a.style.opacity='0';
-      document.body.appendChild(a);
-      a.focus();
-      a.select();
-      var ok=document.execCommand('copy');
-      document.body.removeChild(a);
-      ok?res():rej();
-    }catch(e){rej(e)}
-  });
-}
-
-/* 주소 복사 버튼 자동 생성 */
-document.querySelectorAll('td.a small')
-.forEach(function(s){
-
-  var txt=s.textContent.trim();
-  if(!/경남/.test(txt))return;
-
-  var addr=txt.replace(/^주차장:\s*/,'');
-
-  var b=document.createElement('button');
-  b.className='cp';
-  b.type='button';
-  b.textContent='📋 주소 복사';
-
-  b.addEventListener('click',function(){
-    copy(addr).then(function(){
-      b.textContent='복사 완료 ✓';
-      b.classList.add('ok');
-    }).catch(function(){
-      b.textContent='복사 실패';
-    });
-
-    setTimeout(function(){
-      b.textContent='📋 주소 복사';
-      b.classList.remove('ok');
-    },1800);
-  });
-
-  s.appendChild(document.createElement('br'));
-  s.appendChild(b);
-});
-
-})();
-</script>
 
 </body>
 </html>
