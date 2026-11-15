@@ -8,9 +8,9 @@
 <style>
 :root{
   --bg:#ffffff;        /* 전체 바탕 흰색 */
-  --text:#111827;      /* 기본 글자색 (진한 검정) */
-  --sub:#374151;       /* 서브 텍스트 */
-  --line:#334155;      /* 경계선 색상 (진하게) */
+  --text:#111827;      /* 기본 글자색 */
+  --sub:#4b5563;       /* 서브 텍스트 */
+  --line:#cbd5e1;      /* 은은하고 연한 테두리 색상 */
 }
 
 *{box-sizing:border-box}
@@ -27,7 +27,7 @@ body{
 
 /* 전체 제목 */
 h1{
-  font-size:28px;
+  font-size:27px;
   font-weight:900;
   text-align:center;
   color:#0f172a;
@@ -35,14 +35,14 @@ h1{
   line-height:1.4;
 }
 
-/* 날짜 카드 (흰 바탕에 진한 테두리로 명확하게 분리) */
+/* 날짜 카드 */
 .day{
   background:#ffffff;
-  border:3px solid #0f172a;
+  border:2px solid #94a3b8;
   border-radius:16px;
   overflow:hidden;
   margin-bottom:28px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
 }
 
 /* 날짜 제목 */
@@ -53,11 +53,11 @@ h1{
   color:#ffffff;
   font-size:24px;
   font-weight:900;
-  border-bottom:3px solid #0f172a;
+  border-bottom:2px solid #94a3b8;
   letter-spacing:-0.5px;
 }
 
-/* 일정표 (항목 간 간격을 12px로 넓혀 독립된 카드처럼 확실히 구분) */
+/* 일정표 (항목 간 간격) */
 table{
   width:100%;
   border-collapse:separate;
@@ -69,37 +69,38 @@ table{
 
 /* 표 머리글 */
 th{
-  background:#f1f5f9;
+  background:#f8fafc;
   color:#0f172a;
   font-size:18px;
   font-weight:900;
   padding:10px 6px;
   text-align:center;
-  border:2px solid #cbd5e1;
+  border:1.5px solid var(--line);
   border-radius:8px;
 }
 
-th:first-child{width:115px}
+/* 시간 칸 폭을 135px로 넉넉하게 넓혀서 시간이 잘리지 않도록 함 */
+th:first-child{width:135px}
 
 /* 개별 일정 공통 테두리 */
 td{
   padding:16px 12px;
   vertical-align:middle;
-  border-top:2.5px solid var(--line);
-  border-bottom:2.5px solid var(--line);
+  border-top:1.5px solid var(--line);
+  border-bottom:1.5px solid var(--line);
 }
 
 /* 시간 칸 */
 td.t{
-  width:115px;
+  width:135px;
   text-align:center;
-  background:#eff6ff;
+  background:#f1f5f9;
   color:#1d4ed8;
-  font-size:18px;
+  font-size:17px;
   font-weight:900;
   white-space:nowrap;
-  border-left:2.5px solid var(--line);
-  border-right:2.5px solid #94a3b8;
+  border-left:1.5px solid var(--line);
+  border-right:1.5px solid var(--line);
   border-radius:12px 0 0 12px;
 }
 
@@ -108,7 +109,7 @@ td.a{
   background:#ffffff;
   font-size:21px;
   font-weight:800;
-  border-right:2.5px solid var(--line);
+  border-right:1.5px solid var(--line);
   border-radius:0 12px 12px 0;
 }
 
@@ -127,54 +128,54 @@ td small{
   margin-top:8px;
   font-size:18px;
   font-weight:700;
-  color:#1f2937;
+  color:#374151;
   line-height:1.5;
   word-break:keep-all;
 }
 
 /* 일반 일정 */
 tr.normal td{
-  border-color:#334155;
+  border-color:var(--line);
 }
 
-/* 식사 일정 (주황/황토 계열 고대비) */
+/* 식사 일정 (주황/황토 계열) */
 tr.meal td{
-  border-color:#c2410c;
+  border-color:#fed7aa;
 }
 tr.meal td.t{
-  background:#ffedd5;
+  background:#fff7ed;
   color:#c2410c;
-  border-right:2.5px solid #fdb474;
+  border-right:1.5px solid #fed7aa;
 }
 tr.meal td.a{
-  background:#fffbeb;
+  background:#fffdfa;
 }
 tr.meal td.a b{
   color:#9a3412;
 }
 
-/* 휴식 일정 (녹색 계열 고대비) */
+/* 휴식 일정 (녹색 계열) */
 tr.rest td{
-  border-color:#15803d;
+  border-color:#bbf7d0;
 }
 tr.rest td.t{
-  background:#dcfce7;
+  background:#f0fdf4;
   color:#15803d;
-  border-right:2.5px solid #86efac;
+  border-right:1.5px solid #bbf7d0;
 }
 tr.rest td.a{
-  background:#f0fdf4;
+  background:#fafefc;
 }
 tr.rest td.a b{
   color:#166534;
 }
 
-/* 주소 복사 버튼 (시인성 극대화) */
+/* 주소 복사 버튼 */
 .cp{
   display:inline-block;
   margin:10px 0 2px 0;
   padding:8px 14px;
-  border:2px solid #2563eb;
+  border:1.5px solid #3b82f6;
   border-radius:10px;
   background:#eff6ff;
   color:#1d4ed8;
@@ -193,13 +194,13 @@ tr.rest td.a b{
 /* 작은 스마트폰 대응 */
 @media(max-width:380px){
   body{padding:12px 6px 25px}
-  h1{font-size:24px}
-  .day h2{font-size:22px}
-  table{border-spacing:0 10px; padding:4px 6px 6px;}
-  th:first-child{width:104px}
-  td.t{font-size:16px; padding:13px 4px}
-  td.a{padding:13px 9px}
-  td.a b{font-size:20px}
+  h1{font-size:23px}
+  .day h2{font-size:21px}
+  table{border-spacing:0 10px; padding:4px 4px 4px;}
+  th:first-child{width:120px}
+  td.t{width:120px; font-size:15px; padding:13px 4px}
+  td.a{padding:13px 8px}
+  td.a b{font-size:19px}
   td small{font-size:16px}
   th{font-size:16px}
   .cp{font-size:15px; padding:7px 11px;}
