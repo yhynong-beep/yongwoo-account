@@ -1,84 +1,425 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>12월 19~20일 통영·고성 일정표</title>
+
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--text:#1d2733;--sub:#5d6b7a;--line:#e3e9f0;--accent:#1f6fb2;--head:#1f6fb2;--headtext:#fff;--meal:#fff4e5;--mealtext:#b35c00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151b;--card:#1a222b;--text:#e8edf2;--sub:#9aa7b4;--line:#2b3641;--accent:#6db3ec;--head:#244d70;--headtext:#fff;--meal:#3a2a14;--mealtext:#ffbf73}}
-:root[data-theme="dark"]{--bg:#10151b;--card:#1a222b;--text:#e8edf2;--sub:#9aa7b4;--line:#2b3641;--accent:#6db3ec;--head:#244d70;--headtext:#fff;--meal:#3a2a14;--mealtext:#ffbf73}
-*{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.45;padding:16px 12px 32px}
-h1{font-size:20px;margin:4px 4px 14px;text-align:center}
-.day{background:var(--card);border-radius:14px;overflow:hidden;margin-bottom:18px;border:1px solid var(--line)}
-.day h2{margin:0;padding:12px 14px;background:var(--head);color:var(--headtext);font-size:17px}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-tr:last-child td{border-bottom:0}
-th{font-size:13px;color:var(--sub);background:var(--bg)}
-td.t{white-space:nowrap;font-weight:700;color:var(--accent);width:92px}
-td small{display:block;color:var(--sub);font-size:12.5px;margin-top:3px;word-break:keep-all}
-tr.meal td.a b{color:var(--mealtext)}
-tr.meal{background:var(--meal)}
-.cp{display:inline-block;margin-left:6px;padding:2px 9px;border:1px solid var(--accent);border-radius:12px;background:transparent;color:var(--accent);font-size:12px;font-family:inherit;cursor:pointer;vertical-align:middle}
-.cp.ok{background:var(--accent);color:var(--card)}
+:root{
+  --bg:#f4f7fb;
+  --card:#fff;
+  --text:#1d2733;
+  --sub:#5d6b7a;
+  --line:#e3e9f0;
+  --accent:#1f6fb2;
+  --head:#1f6fb2;
+  --headtext:#fff;
+  --meal:#fff4e5;
+  --mealtext:#b35c00;
+  box-sizing:border-box;
+}
+
+@media(prefers-color-scheme:dark){
+:root:not([data-theme="light"]){
+  --bg:#10151b;
+  --card:#1a222b;
+  --text:#e8edf2;
+  --sub:#9aa7b4;
+  --line:#2b3641;
+  --accent:#6db3ec;
+  --head:#244d70;
+  --headtext:#fff;
+  --meal:#3a2a14;
+  --mealtext:#ffbf73;
+}
+}
+
+:root[data-theme="dark"]{
+  --bg:#10151b;
+  --card:#1a222b;
+  --text:#e8edf2;
+  --sub:#9aa7b4;
+  --line:#2b3641;
+  --accent:#6db3ec;
+  --head:#244d70;
+  --headtext:#fff;
+  --meal:#3a2a14;
+  --mealtext:#ffbf73;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-padding-top:20px;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,"Apple SD Gothic Neo",
+  "Malgun Gothic","Noto Sans KR",sans-serif;
+  line-height:1.65;
+  padding:18px 12px 35px;
+}
+
+/* 전체 제목 */
+h1{
+  font-size:26px;
+  line-height:1.4;
+  margin:10px 2px 22px;
+  text-align:center;
+  font-weight:800;
+}
+
+/* 날짜별 카드 */
+.day{
+  background:var(--card);
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:22px;
+  border:1px solid var(--line);
+}
+
+/* 날짜 제목 */
+.day h2{
+  margin:0;
+  padding:16px 14px;
+  background:var(--head);
+  color:var(--headtext);
+  font-size:23px;
+  font-weight:800;
+}
+
+/* 일정표 */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:20px;
+}
+
+/* 표 안의 글자 */
+th,td{
+  padding:15px 10px;
+  border-bottom:1px solid var(--line);
+  vertical-align:middle;
+  text-align:left;
+}
+
+tr:last-child td{
+  border-bottom:0;
+}
+
+/* 시간 */
+td.t{
+  white-space:nowrap;
+  font-size:18px;
+  font-weight:800;
+  color:var(--accent);
+  width:112px;
+}
+
+/* 일정 내용 */
+td.a b{
+  font-size:21px;
+  font-weight:800;
+  line-height:1.5;
+}
+
+/* 주소 */
+td small{
+  display:block;
+  color:var(--sub);
+  font-size:17px;
+  line-height:1.55;
+  margin-top:7px;
+  word-break:keep-all;
+}
+
+/* 표 제목 */
+th{
+  font-size:17px;
+  color:var(--sub);
+  background:var(--bg);
+}
+
+/* 식사 일정 */
+tr.meal td.a b{
+  color:var(--mealtext);
+}
+
+tr.meal{
+  background:var(--meal);
+}
+
+/* 주소 복사 버튼 */
+.cp{
+  display:inline-block;
+  margin:5px 0 0 5px;
+  padding:7px 12px;
+  border:1px solid var(--accent);
+  border-radius:18px;
+  background:transparent;
+  color:var(--accent);
+  font-size:15px;
+  font-family:inherit;
+  cursor:pointer;
+  vertical-align:middle;
+}
+
+.cp.ok{
+  background:var(--accent);
+  color:var(--card);
+}
+
+/* 작은 스마트폰 */
+@media(max-width:380px){
+  body{
+    padding:12px 7px 25px;
+  }
+
+  h1{
+    font-size:23px;
+  }
+
+  .day h2{
+    font-size:21px;
+  }
+
+  td.t{
+    font-size:16px;
+    width:100px;
+  }
+
+  td.a b{
+    font-size:19px;
+  }
+
+  td small{
+    font-size:15px;
+  }
+
+  th{
+    font-size:15px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <h1>🚗 12월 19~20일 통영·고성 일정</h1>
 
+<!-- 12월 19일 -->
 <div class="day">
 <h2>12월 19일 (토)</h2>
+
 <table>
-<tr><th>시간</th><th>일정</th></tr>
-<tr><td class="t">10:00~11:00</td><td class="a"><b>만남</b><small>통영 마리나 리조트 (제1주차장)</small><small>경남 통영시 도남동 646</small></td></tr>
-<tr><td class="t">11:00~12:00</td><td class="a"><b>통영케이블카</b><small>경남 통영시 발개로 205</small></td></tr>
-<tr class="meal"><td class="t">12:00~13:30</td><td class="a"><b>점심 - 토담 (찜 전문)</b><small>경남 통영시 봉수로 67 (봉평동 224-7)</small></td></tr>
-<tr><td class="t">13:30~15:30</td><td class="a"><b>카페 - 드스텔라</b><small>경남 통영시 운하1길 65 (미수동 1-1)</small></td></tr>
-<tr><td class="t">15:30~16:00</td><td class="a"><b>해저터널</b><small>주차장: 경남 통영시 봉평동 446-20</small></td></tr>
-<tr><td class="t">16:00~17:00</td><td class="a"><b>이순신공원</b><small>경남 통영시 이순신공원길 205</small></td></tr>
-<tr><td class="t">17:00~18:00</td><td class="a"><b>경남교육종합복지관 - 주차</b><small>경남 고성군 회화면 회진로 296</small></td></tr>
-<tr class="meal"><td class="t">18:00~20:00</td><td class="a"><b>저녁 - 당항포횟집</b><small>경남 고성군 회화면 당항만로 1007 (당항리 506-7)</small></td></tr>
-<tr><td class="t">20:00~</td><td class="a"><b>경남교육종합복지관 - 휴식</b></td></tr>
+<tbody>
+<tr>
+<th>시간</th>
+<th>일정</th>
+</tr>
+
+<tr>
+<td class="t">10:00~11:00</td>
+<td class="a">
+<b>만남</b>
+<small>통영 마리나 리조트 (제1주차장)</small>
+<small>경남 통영시 도남동 646</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">11:00~12:00</td>
+<td class="a">
+<b>통영케이블카</b>
+<small>경남 통영시 발개로 205</small>
+</td>
+</tr>
+
+<tr class="meal">
+<td class="t">12:00~13:30</td>
+<td class="a">
+<b>점심 - 토담 (찜 전문)</b>
+<small>경남 통영시 봉수로 67 (봉평동 224-7)</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">13:30~15:30</td>
+<td class="a">
+<b>카페 - 드스텔라</b>
+<small>경남 통영시 운하1길 65 (미수동 1-1)</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">15:30~16:00</td>
+<td class="a">
+<b>해저터널</b>
+<small>주차장: 경남 통영시 봉평동 446-20</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">16:00~17:00</td>
+<td class="a">
+<b>이순신공원</b>
+<small>경남 통영시 이순신공원길 205</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">17:00~18:00</td>
+<td class="a">
+<b>경남교육종합복지관 - 주차</b>
+<small>경남 고성군 회화면 회진로 296</small>
+</td>
+</tr>
+
+<tr class="meal">
+<td class="t">18:00~20:00</td>
+<td class="a">
+<b>저녁 - 당항포횟집</b>
+<small>경남 고성군 회화면 당항만로 1007 (당항리 506-7)</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">20:00~</td>
+<td class="a">
+<b>경남교육종합복지관 - 휴식</b>
+</td>
+</tr>
+
+</tbody>
 </table>
 </div>
 
+<!-- 12월 20일 -->
 <div class="day">
 <h2>12월 20일 (일)</h2>
+
 <table>
-<tr><th>시간</th><th>일정</th></tr>
-<tr class="meal"><td class="t">07:30~08:30</td><td class="a"><b>아침 - 누룽지, 라면</b><small>누룽지, 라면</small></td></tr>
-<tr><td class="t">08:30~10:00</td><td class="a"><b>복지관 시설이용</b><small>복지관 시설이용 - 커피 등</small></td></tr>
-<tr><td class="t">10:00~12:00</td><td class="a"><b>당항포 관광</b></td></tr>
-<tr class="meal"><td class="t">12:00~13:00</td><td class="a"><b>점심 - 진국본가</b><small>경남 고성군 회화면 관인로 20 (배둔리 1288-74)</small></td></tr>
+<tbody>
+<tr>
+<th>시간</th>
+<th>일정</th>
+</tr>
+
+<tr class="meal">
+<td class="t">07:30~08:30</td>
+<td class="a">
+<b>아침 - 누룽지, 라면</b>
+<small>누룽지, 라면</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">08:30~10:00</td>
+<td class="a">
+<b>복지관 시설이용</b>
+<small>복지관 시설이용 - 커피 등</small>
+</td>
+</tr>
+
+<tr>
+<td class="t">10:00~12:00</td>
+<td class="a">
+<b>당항포 관광</b>
+</td>
+</tr>
+
+<tr class="meal">
+<td class="t">12:00~13:00</td>
+<td class="a">
+<b>점심 - 진국본가</b>
+<small>경남 고성군 회화면 관인로 20 (배둔리 1288-74)</small>
+</td>
+</tr>
+
+</tbody>
 </table>
 </div>
+
 <script>
 (function(){
+
 function copy(t){
-  if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t).catch(function(){return fb(t)})}
-  return fb(t)
+  if(navigator.clipboard &&
+     navigator.clipboard.writeText){
+    return navigator.clipboard.writeText(t)
+      .catch(function(){
+        return fb(t);
+      });
+  }
+  return fb(t);
 }
+
 function fb(t){
   return new Promise(function(res,rej){
-    try{var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.focus();a.select();var ok=document.execCommand('copy');document.body.removeChild(a);ok?res():rej()}catch(e){rej(e)}
-  })
-}
-document.querySelectorAll('td.a small').forEach(function(s){
-  var txt=s.textContent.trim();
-  if(!/경남/.test(txt))return;
-  var addr=txt.replace(/^주차장:\s*/,'');
-  var b=document.createElement('button');
-  b.className='cp';b.type='button';b.textContent='주소 복사';
-  b.addEventListener('click',function(){
-    copy(addr).then(function(){b.textContent='복사됨 ✓';b.classList.add('ok')}).catch(function(){b.textContent='복사 실패'});
-    setTimeout(function(){b.textContent='주소 복사';b.classList.remove('ok')},1800);
+    try{
+      var a=document.createElement('textarea');
+      a.value=t;
+      a.style.position='fixed';
+      a.style.opacity='0';
+      document.body.appendChild(a);
+      a.focus();
+      a.select();
+
+      var ok=document.execCommand('copy');
+      document.body.removeChild(a);
+
+      ok?res():rej();
+    }catch(e){
+      rej(e);
+    }
   });
+}
+
+/* 주소마다 복사 버튼 자동 생성 */
+document.querySelectorAll('td.a small')
+.forEach(function(s){
+
+  var txt=s.textContent.trim();
+
+  if(!/경남/.test(txt))return;
+
+  var addr=txt.replace(/^주차장:\s*/,'');
+
+  var b=document.createElement('button');
+
+  b.className='cp';
+  b.type='button';
+  b.textContent='주소 복사';
+
+  b.addEventListener('click',function(){
+
+    copy(addr).then(function(){
+      b.textContent='복사됨 ✓';
+      b.classList.add('ok');
+    }).catch(function(){
+      b.textContent='복사 실패';
+    });
+
+    setTimeout(function(){
+      b.textContent='주소 복사';
+      b.classList.remove('ok');
+    },1800);
+
+  });
+
   s.appendChild(b);
+
 });
+
 })();
 </script>
+
 </body>
 </html>
