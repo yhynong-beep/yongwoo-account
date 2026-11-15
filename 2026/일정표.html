@@ -17,7 +17,7 @@
 
 body{
   margin:0;
-  padding:16px 12px 35px;
+  padding:16px 10px 35px;
   background:var(--bg);
   color:var(--text);
   font-family:-apple-system,"Apple SD Gothic Neo",
@@ -64,7 +64,7 @@ table{
   border-spacing:0 12px;
   table-layout:fixed;
   background:#ffffff;
-  padding:6px 10px 10px;
+  padding:6px 6px 10px;
 }
 
 /* 표 머리글 */
@@ -73,18 +73,18 @@ th{
   color:#0f172a;
   font-size:18px;
   font-weight:900;
-  padding:10px 6px;
+  padding:10px 4px;
   text-align:center;
   border:1.5px solid var(--line);
   border-radius:8px;
 }
 
-/* 시간 칸 폭을 135px로 넉넉하게 넓혀서 시간이 잘리지 않도록 함 */
-th:first-child{width:135px}
+/* 시간 칸 폭을 150px로 넉넉하게 확보하여 시간이 절대 잘리지 않도록 함 */
+th:first-child{width:150px}
 
 /* 개별 일정 공통 테두리 */
 td{
-  padding:16px 12px;
+  padding:16px 10px;
   vertical-align:middle;
   border-top:1.5px solid var(--line);
   border-bottom:1.5px solid var(--line);
@@ -92,13 +92,14 @@ td{
 
 /* 시간 칸 */
 td.t{
-  width:135px;
+  width:150px;
   text-align:center;
   background:#f1f5f9;
   color:#1d4ed8;
-  font-size:17px;
+  font-size:16px;
   font-weight:900;
   white-space:nowrap;
+  padding:16px 2px;
   border-left:1.5px solid var(--line);
   border-right:1.5px solid var(--line);
   border-radius:12px 0 0 12px;
@@ -193,16 +194,16 @@ tr.rest td.a b{
 
 /* 작은 스마트폰 대응 */
 @media(max-width:380px){
-  body{padding:12px 6px 25px}
+  body{padding:12px 4px 25px}
   h1{font-size:23px}
   .day h2{font-size:21px}
-  table{border-spacing:0 10px; padding:4px 4px 4px;}
-  th:first-child{width:120px}
-  td.t{width:120px; font-size:15px; padding:13px 4px}
+  table{border-spacing:0 10px; padding:4px 2px 4px;}
+  th:first-child{width:130px}
+  td.t{width:130px; font-size:14.5px; padding:13px 1px}
   td.a{padding:13px 8px}
   td.a b{font-size:19px}
   td small{font-size:16px}
-  th{font-size:16px}
+  th{font-size:15px}
   .cp{font-size:15px; padding:7px 11px;}
 }
 </style>
