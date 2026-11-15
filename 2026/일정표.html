@@ -70,7 +70,7 @@ h1{
   background:#ffffff;
 }
 
-/* 시간 (맨 위 한 줄) */
+/* 시간 */
 .time{
   display:inline-block;
   background:#eff6ff;
@@ -83,7 +83,7 @@ h1{
   margin-bottom:4px;
 }
 
-/* 일정 제목 (그 아래 한 줄) */
+/* 일정 제목 */
 .title{
   font-size:20px;
   font-weight:900;
@@ -91,13 +91,36 @@ h1{
   word-break:keep-all;
 }
 
-/* 주소 및 부가설명 (맨 아래 한 줄) */
-.desc{
+/* 주소 및 네이버 검색 링크 영역 */
+.desc-wrap {
   margin-top:4px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+}
+
+.desc{
   font-size:16px;
   font-weight:700;
   color:#374151;
   word-break:keep-all;
+}
+
+/* 네이버 검색 버튼 스타일 */
+.naver-btn {
+  display:inline-block;
+  background:#03c75a;
+  color:#ffffff;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  padding:2px 6px;
+  border-radius:4px;
+  white-space:nowrap;
+}
+.naver-btn:hover {
+  background:#02b350;
 }
 
 /* 식사 일정 (주황 계열) */
@@ -150,42 +173,66 @@ h1{
     <div class="item">
      <div class="time">10:00~11:00</div>
      <div class="title">🤝 만남 - 통영 마리나 리조트</div>
-     <div class="desc">제1주차장 (경남 통영시 도남동 646)</div>
+     <div class="desc-wrap">
+      <span class="desc">제1주차장 (경남 통영시 도남동 646)</span>
+      <a href="https://search.naver.com/search.naver?query=통영+마리나리조트+주차장" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item">
      <div class="time">11:00~12:00</div>
      <div class="title">🚡 통영케이블카</div>
-     <div class="desc">경남 통영시 발개로 205</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 통영시 발개로 205</span>
+      <a href="https://search.naver.com/search.naver?query=통영케이블카" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item meal">
      <div class="time">12:00~13:30</div>
      <div class="title">🍚 점심 - 토담 (찜 전문)</div>
-     <div class="desc">경남 통영시 봉수로 67 (봉평동 224-7)</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 통영시 봉수로 67 (봉평동 224-7)</span>
+      <a href="https://search.naver.com/search.naver?query=통영+토담+찜전문" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item">
      <div class="time">13:30~15:30</div>
      <div class="title">☕ 카페 - 드스텔라</div>
-     <div class="desc">경남 통영시 운하1길 65 (미수동 1-1)</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 통영시 운하1길 65 (미수동 1-1)</span>
+      <a href="https://search.naver.com/search.naver?query=통영+드스텔라" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item">
      <div class="time">15:30~16:00</div>
      <div class="title">🌊 해저터널</div>
-     <div class="desc">주차장: 경남 통영시 봉평동 446-20</div>
+     <div class="desc-wrap">
+      <span class="desc">주차장: 경남 통영시 봉평동 446-20</span>
+      <a href="https://search.naver.com/search.naver?query=통영해저터널" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item">
      <div class="time">16:00~17:00</div>
      <div class="title">🌳 이순신공원</div>
-     <div class="desc">경남 통영시 이순신공원길 205</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 통영시 이순신공원길 205</span>
+      <a href="https://search.naver.com/search.naver?query=통영+이순신공원" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item">
      <div class="time">17:00~18:00</div>
      <div class="title">🏨 경남교육종합복지관 - 주차</div>
-     <div class="desc">경남 고성군 회화면 회진로 296</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 고성군 회화면 회진로 296</span>
+      <a href="https://search.naver.com/search.naver?query=경남교육종합복지관" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item meal">
      <div class="time">18:00~20:00</div>
      <div class="title">🐟 저녁 - 당항포횟집</div>
-     <div class="desc">경남 고성군 회화면 당항만로 1007 (당항리 506-7)</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 고성군 회화면 당항만로 1007 (당항리 506-7)</span>
+      <a href="https://search.naver.com/search.naver?query=고성+당항포횟집" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item rest">
      <div class="time">20:00~</div>
@@ -209,11 +256,18 @@ h1{
     <div class="item">
      <div class="time">10:00~12:00</div>
      <div class="title">🏞️ 당항포 관광</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 고성군 회화면 당항포로 1116 (당항포관광지)</span>
+      <a href="https://search.naver.com/search.naver?query=당항포관광지" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
     <div class="item meal">
      <div class="time">12:00~13:00</div>
      <div class="title">🍲 점심 - 진국본가</div>
-     <div class="desc">경남 고성군 회화면 관인로 20 (배둔리 1288-74)</div>
+     <div class="desc-wrap">
+      <span class="desc">경남 고성군 회화면 관인로 20 (배둔리 1288-74)</span>
+      <a href="https://search.naver.com/search.naver?query=고성+진국본가" target="_blank" class="naver-btn">네이버 검색</a>
+     </div>
     </div>
    </div>
   </div>
