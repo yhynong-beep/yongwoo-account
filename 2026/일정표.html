@@ -1,185 +1,193 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>12월 19~20일 통영·고성 일정표</title>
+<title>12월 19~20일 통영·고성 일정</title>
 
 <style>
 :root{
-  --bg:#f4f7fb;
-  --card:#fff;
-  --text:#1d2733;
-  --sub:#5d6b7a;
-  --line:#e3e9f0;
-  --accent:#1f6fb2;
-  --head:#1f6fb2;
-  --headtext:#fff;
-  --meal:#fff4e5;
-  --mealtext:#b35c00;
-  box-sizing:border-box;
-}
-
-@media(prefers-color-scheme:dark){
-:root:not([data-theme="light"]){
-  --bg:#10151b;
-  --card:#1a222b;
-  --text:#e8edf2;
-  --sub:#9aa7b4;
-  --line:#2b3641;
-  --accent:#6db3ec;
-  --head:#244d70;
-  --headtext:#fff;
-  --meal:#3a2a14;
-  --mealtext:#ffbf73;
-}
-}
-
-:root[data-theme="dark"]{
-  --bg:#10151b;
-  --card:#1a222b;
-  --text:#e8edf2;
-  --sub:#9aa7b4;
-  --line:#2b3641;
-  --accent:#6db3ec;
-  --head:#244d70;
-  --headtext:#fff;
-  --meal:#3a2a14;
-  --mealtext:#ffbf73;
+  --bg:#edf2f8;
+  --card:#ffffff;
+  --text:#243447;
+  --sub:#596b7e;
+  --line:#d5e0ec;
+  --blue:#175b96;
+  --blue-light:#eaf4ff;
+  --orange:#fff0dc;
+  --orange-text:#a94f00;
+  --green:#eaf5ec;
+  --green-text:#28643b;
 }
 
 *{
   box-sizing:border-box;
 }
 
-html{
-  scroll-padding-top:20px;
-}
-
 body{
   margin:0;
+  padding:18px 11px 35px;
   background:var(--bg);
   color:var(--text);
   font-family:-apple-system,"Apple SD Gothic Neo",
   "Malgun Gothic","Noto Sans KR",sans-serif;
-  line-height:1.65;
-  padding:18px 12px 35px;
+  line-height:1.6;
 }
 
 /* 전체 제목 */
 h1{
-  font-size:26px;
-  line-height:1.4;
-  margin:10px 2px 22px;
   text-align:center;
-  font-weight:800;
+  font-size:26px;
+  font-weight:900;
+  margin:8px 0 22px;
+  color:#164c7c;
+  line-height:1.4;
 }
 
 /* 날짜별 카드 */
 .day{
   background:var(--card);
+  border:2px solid #b9cde1;
   border-radius:16px;
   overflow:hidden;
-  margin-bottom:22px;
-  border:1px solid var(--line);
+  margin-bottom:24px;
+  box-shadow:0 3px 9px rgba(30,70,110,.08);
 }
 
 /* 날짜 제목 */
 .day h2{
   margin:0;
-  padding:16px 14px;
-  background:var(--head);
-  color:var(--headtext);
+  padding:15px 14px;
+  background:linear-gradient(100deg,#164c7c,#287dbb);
+  color:white;
   font-size:23px;
-  font-weight:800;
+  font-weight:900;
 }
 
 /* 일정표 */
 table{
   width:100%;
   border-collapse:collapse;
-  font-size:20px;
+  table-layout:fixed;
 }
 
-/* 표 안의 글자 */
-th,td{
-  padding:15px 10px;
-  border-bottom:1px solid var(--line);
+/* 표 머리글 */
+th{
+  padding:12px 8px;
+  background:#dceaf7;
+  color:#294f70;
+  font-size:17px;
+  font-weight:800;
+  border-bottom:2px solid #b7cce0;
+  text-align:center;
+}
+
+th:first-child{
+  width:112px;
+}
+
+/* 일정 항목 */
+td{
+  padding:15px 9px;
+  border-bottom:2px solid #d9e3ed;
   vertical-align:middle;
-  text-align:left;
-}
-
-tr:last-child td{
-  border-bottom:0;
 }
 
 /* 시간 */
 td.t{
-  white-space:nowrap;
-  font-size:18px;
-  font-weight:800;
-  color:var(--accent);
   width:112px;
+  text-align:center;
+  white-space:nowrap;
+  background:#edf5ff;
+  color:#145a98;
+  font-size:17px;
+  font-weight:900;
+  border-right:2px solid #d0dfef;
 }
 
 /* 일정 내용 */
-td.a b{
-  font-size:21px;
+td.a{
+  font-size:20px;
   font-weight:800;
   line-height:1.5;
+}
+
+/* 일정 이름 */
+td.a b{
+  font-size:21px;
+  font-weight:900;
 }
 
 /* 주소 */
 td small{
   display:block;
-  color:var(--sub);
-  font-size:17px;
-  line-height:1.55;
   margin-top:7px;
+  color:var(--sub);
+  font-size:16px;
+  line-height:1.55;
+  font-weight:500;
   word-break:keep-all;
 }
 
-/* 표 제목 */
-th{
-  font-size:17px;
-  color:var(--sub);
-  background:var(--bg);
+/* 일반 일정의 교차 배경 */
+tr.normal:nth-child(even) td.a{
+  background:#f6faff;
+}
+
+tr.normal:nth-child(odd) td.a{
+  background:#ffffff;
 }
 
 /* 식사 일정 */
-tr.meal td.a b{
-  color:var(--mealtext);
+tr.meal td{
+  background:var(--orange);
 }
 
-tr.meal{
-  background:var(--meal);
+tr.meal td.t{
+  background:#ffe3bd;
+  color:#984600;
+}
+
+tr.meal td.a b{
+  color:var(--orange-text);
+}
+
+/* 휴식 일정 */
+tr.rest td.a{
+  background:var(--green);
+}
+
+tr.rest td.t{
+  background:#dcefe0;
+  color:var(--green-text);
 }
 
 /* 주소 복사 버튼 */
 .cp{
   display:inline-block;
-  margin:5px 0 0 5px;
-  padding:7px 12px;
-  border:1px solid var(--accent);
-  border-radius:18px;
-  background:transparent;
-  color:var(--accent);
-  font-size:15px;
+  margin:5px 0 0 4px;
+  padding:6px 11px;
+  border:1px solid #287dbb;
+  border-radius:16px;
+  background:#e7f2ff;
+  color:#145a98;
+  font-size:14px;
+  font-weight:800;
   font-family:inherit;
   cursor:pointer;
   vertical-align:middle;
 }
 
 .cp.ok{
-  background:var(--accent);
-  color:var(--card);
+  background:#287dbb;
+  color:white;
 }
 
 /* 작은 스마트폰 */
 @media(max-width:380px){
   body{
-    padding:12px 7px 25px;
+    padding:12px 6px 25px;
   }
 
   h1{
@@ -190,9 +198,12 @@ tr.meal{
     font-size:21px;
   }
 
+  th:first-child{
+    width:102px;
+  }
+
   td.t{
-    font-size:16px;
-    width:100px;
+    font-size:15px;
   }
 
   td.a b{
@@ -216,28 +227,29 @@ tr.meal{
 
 <!-- 12월 19일 -->
 <div class="day">
-<h2>12월 19일 (토)</h2>
+<h2>📅 12월 19일 (토)</h2>
 
 <table>
 <tbody>
-<tr>
-<th>시간</th>
-<th>일정</th>
-</tr>
 
 <tr>
+<th>시간</th>
+<th>일정 및 장소</th>
+</tr>
+
+<tr class="normal">
 <td class="t">10:00~11:00</td>
 <td class="a">
-<b>만남</b>
+<b>🤝 만남</b>
 <small>통영 마리나 리조트 (제1주차장)</small>
 <small>경남 통영시 도남동 646</small>
 </td>
 </tr>
 
-<tr>
+<tr class="normal">
 <td class="t">11:00~12:00</td>
 <td class="a">
-<b>통영케이블카</b>
+<b>🚡 통영케이블카</b>
 <small>경남 통영시 발개로 205</small>
 </td>
 </tr>
@@ -245,39 +257,39 @@ tr.meal{
 <tr class="meal">
 <td class="t">12:00~13:30</td>
 <td class="a">
-<b>점심 - 토담 (찜 전문)</b>
+<b>🍚 점심 - 토담 (찜 전문)</b>
 <small>경남 통영시 봉수로 67 (봉평동 224-7)</small>
 </td>
 </tr>
 
-<tr>
+<tr class="normal">
 <td class="t">13:30~15:30</td>
 <td class="a">
-<b>카페 - 드스텔라</b>
+<b>☕ 카페 - 드스텔라</b>
 <small>경남 통영시 운하1길 65 (미수동 1-1)</small>
 </td>
 </tr>
 
-<tr>
+<tr class="normal">
 <td class="t">15:30~16:00</td>
 <td class="a">
-<b>해저터널</b>
+<b>🌊 해저터널</b>
 <small>주차장: 경남 통영시 봉평동 446-20</small>
 </td>
 </tr>
 
-<tr>
+<tr class="normal">
 <td class="t">16:00~17:00</td>
 <td class="a">
-<b>이순신공원</b>
+<b>🌳 이순신공원</b>
 <small>경남 통영시 이순신공원길 205</small>
 </td>
 </tr>
 
-<tr>
+<tr class="normal">
 <td class="t">17:00~18:00</td>
 <td class="a">
-<b>경남교육종합복지관 - 주차</b>
+<b>🏨 경남교육종합복지관 - 주차</b>
 <small>경남 고성군 회화면 회진로 296</small>
 </td>
 </tr>
@@ -285,15 +297,15 @@ tr.meal{
 <tr class="meal">
 <td class="t">18:00~20:00</td>
 <td class="a">
-<b>저녁 - 당항포횟집</b>
+<b>🐟 저녁 - 당항포횟집</b>
 <small>경남 고성군 회화면 당항만로 1007 (당항리 506-7)</small>
 </td>
 </tr>
 
-<tr>
+<tr class="rest">
 <td class="t">20:00~</td>
 <td class="a">
-<b>경남교육종합복지관 - 휴식</b>
+<b>🏡 경남교육종합복지관 - 휴식</b>
 </td>
 </tr>
 
@@ -303,42 +315,43 @@ tr.meal{
 
 <!-- 12월 20일 -->
 <div class="day">
-<h2>12월 20일 (일)</h2>
+<h2>📅 12월 20일 (일)</h2>
 
 <table>
 <tbody>
+
 <tr>
 <th>시간</th>
-<th>일정</th>
+<th>일정 및 장소</th>
 </tr>
 
 <tr class="meal">
 <td class="t">07:30~08:30</td>
 <td class="a">
-<b>아침 - 누룽지, 라면</b>
+<b>🍜 아침 - 누룽지, 라면</b>
 <small>누룽지, 라면</small>
 </td>
 </tr>
 
-<tr>
+<tr class="rest">
 <td class="t">08:30~10:00</td>
 <td class="a">
-<b>복지관 시설이용</b>
+<b>☕ 복지관 시설이용</b>
 <small>복지관 시설이용 - 커피 등</small>
 </td>
 </tr>
 
-<tr>
+<tr class="normal">
 <td class="t">10:00~12:00</td>
 <td class="a">
-<b>당항포 관광</b>
+<b>🏞️ 당항포 관광</b>
 </td>
 </tr>
 
 <tr class="meal">
 <td class="t">12:00~13:00</td>
 <td class="a">
-<b>점심 - 진국본가</b>
+<b>🍲 점심 - 진국본가</b>
 <small>경남 고성군 회화면 관인로 20 (배둔리 1288-74)</small>
 </td>
 </tr>
@@ -382,7 +395,7 @@ function fb(t){
   });
 }
 
-/* 주소마다 복사 버튼 자동 생성 */
+/* 주소 복사 버튼 자동 생성 */
 document.querySelectorAll('td.a small')
 .forEach(function(s){
 
@@ -396,19 +409,19 @@ document.querySelectorAll('td.a small')
 
   b.className='cp';
   b.type='button';
-  b.textContent='주소 복사';
+  b.textContent='📋 주소 복사';
 
   b.addEventListener('click',function(){
 
     copy(addr).then(function(){
-      b.textContent='복사됨 ✓';
+      b.textContent='복사 완료 ✓';
       b.classList.add('ok');
     }).catch(function(){
       b.textContent='복사 실패';
     });
 
     setTimeout(function(){
-      b.textContent='주소 복사';
+      b.textContent='📋 주소 복사';
       b.classList.remove('ok');
     },1800);
 
