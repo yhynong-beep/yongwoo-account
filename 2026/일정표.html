@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,24 +7,17 @@
 
 <style>
 :root{
-  --bg:#f3f6fa;
-  --text:#344456;
-  --sub:#68798a;
-  --blue:#dcecf9;
-  --blue-text:#315c80;
-  --blue-bg:#f0f7fd;
-  --orange:#fff1e2;
-  --orange-text:#a66b36;
-  --green:#edf6ed;
-  --green-text:#4e7856;
-  --line:#dce4eb;
+  --bg:#e9eef4;
+  --text:#1e293b;
+  --sub:#475569;
+  --line:#b4c6d8;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  padding:16px 10px 30px;
+  padding:16px 10px 35px;
   background:var(--bg);
   color:var(--text);
   font-family:-apple-system,"Apple SD Gothic Neo",
@@ -35,172 +27,181 @@ body{
 
 /* 전체 제목 */
 h1{
-  font-size:26px;
+  font-size:27px;
   font-weight:900;
   text-align:center;
-  color:#426987;
-  margin:8px 0 20px;
+  color:#1e3a5f;
+  margin:8px 0 22px;
   line-height:1.4;
 }
 
 /* 날짜 카드 */
 .day{
   background:#fff;
-  border:1px solid #cbd9e5;
-  border-radius:13px;
+  border:2px solid #9eb6cc;
+  border-radius:16px;
   overflow:hidden;
-  margin-bottom:22px;
-  box-shadow:0 2px 5px rgba(50,80,110,.06);
+  margin-bottom:28px;
+  box-shadow:0 4px 10px rgba(30,58,95,.08);
 }
 
 /* 날짜 제목 */
 .day h2{
   margin:0;
-  padding:14px 13px;
-  background:#d8eaf8;
-  color:#315b7c;
-  font-size:23px;
+  padding:16px 14px;
+  background:#2c5282;
+  color:#ffffff;
+  font-size:24px;
   font-weight:900;
-  border-bottom:1px solid #bfd4e5;
+  letter-spacing:-0.5px;
 }
 
-/* 일정표 */
+/* 일정표 - 항목 간 간격을 10px로 넓혀 확실히 구분 */
 table{
   width:100%;
   border-collapse:separate;
-  border-spacing:0 3px;
+  border-spacing:0 10px;
   table-layout:fixed;
-  background:#f5f8fb;
-  padding:4px;
+  background:#e2e8f0;
+  padding:4px 8px 8px;
 }
 
 /* 표 머리글 */
 th{
-  background:#e8eff5;
-  color:#526b80;
-  font-size:17px;
-  font-weight:800;
+  background:#cbd5e1;
+  color:#1e293b;
+  font-size:18px;
+  font-weight:900;
   padding:10px 5px;
   text-align:center;
-  border-bottom:1px solid #cbd8e3;
+  border-radius:8px;
 }
 
-th:first-child{width:112px}
+th:first-child{width:115px}
 
-/* 일정 */
+/* 일정 공통 (개별 카드처럼 보이도록 테두리와 그림자 적용) */
 td{
-  padding:13px 9px;
+  padding:15px 11px;
   vertical-align:middle;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  border-top:2px solid var(--line);
+  border-bottom:2px solid var(--line);
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 시간 */
+/* 시간 칸 */
 td.t{
-  width:112px;
+  width:115px;
   text-align:center;
-  background:#e5f0fa;
-  color:#426b8e;
-  font-size:17px;
+  background:#dbeafe;
+  color:#1e40af;
+  font-size:18px;
   font-weight:900;
   white-space:nowrap;
-  border-right:1px solid #d1dfeb;
+  border-left:2px solid var(--line);
+  border-right:2px solid #bfdbfe;
+  border-radius:10px 0 0 10px;
 }
 
-/* 일정 내용 */
+/* 일정 내용 칸 */
 td.a{
-  background:#fff;
-  font-size:20px;
+  background:#ffffff;
+  font-size:21px;
   font-weight:800;
-  border-right:1px solid var(--line);
+  border-right:2px solid var(--line);
+  border-radius:0 10px 10px 0;
 }
 
 /* 일정 제목 */
 td.a b{
-  font-size:21px;
+  display:block;
+  font-size:22px;
   font-weight:900;
-  color:#3d5368;
+  color:#0f172a;
+  margin-bottom:2px;
 }
 
-/* 주소 */
+/* 주소 및 부가설명 */
 td small{
   display:block;
-  margin-top:7px;
-  font-size:17px;
-  font-weight:500;
-  color:#66798a;
-  line-height:1.55;
+  margin-top:8px;
+  font-size:18px;
+  font-weight:600;
+  color:#334155;
+  line-height:1.5;
   word-break:keep-all;
 }
 
 /* 일반 일정 */
 tr.normal td.a{
-  background:#f4f9fd;
+  background:#ffffff;
 }
 
-/* 식사 일정 */
+/* 식사 일정 (주황/황토 계열 고대비) */
+tr.meal td{
+  border-color:#e2b48a;
+}
 tr.meal td.t{
-  background:#f8e5d2;
-  color:#99663e;
-  border-right:1px solid #ead4bd;
+  background:#ffedd5;
+  color:#9a3412;
+  border-right:2px solid #fed7aa;
 }
-
 tr.meal td.a{
-  background:#fff3e7;
-  border-color:#eadccf;
+  background:#fffaf5;
 }
-
 tr.meal td.a b{
-  color:#a66b36;
+  color:#9a3412;
 }
 
-/* 휴식 일정 */
+/* 휴식 일정 (녹색 계열 고대비) */
+tr.rest td{
+  border-color:#9cc5a1;
+}
 tr.rest td.t{
-  background:#e2eee2;
-  color:#527958;
-  border-right:1px solid #d1e2d1;
+  background:#dcfce7;
+  color:#166534;
+  border-right:2px solid #bbf7d0;
 }
-
 tr.rest td.a{
-  background:#f0f7ef;
-  border-color:#dce9dc;
+  background:#f6fef9;
 }
-
 tr.rest td.a b{
-  color:#527958;
+  color:#166534;
 }
 
-/* 주소 복사 버튼 */
+/* 주소 복사 버튼 (터치하기 쉽게 크기 확대) */
 .cp{
   display:inline-block;
-  margin:6px 0 0 4px;
-  padding:6px 10px;
-  border:1px solid #9dbbd2;
-  border-radius:14px;
-  background:#f5faff;
-  color:#426b8e;
-  font-size:14px;
-  font-weight:800;
+  margin:9px 0 2px 0;
+  padding:8px 14px;
+  border:1.5px solid #3b82f6;
+  border-radius:10px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  font-size:16px;
+  font-weight:900;
   font-family:inherit;
   cursor:pointer;
 }
 
 .cp.ok{
-  background:#dcecf9;
-  color:#315b7c;
+  background:#1d4ed8;
+  color:#ffffff;
+  border-color:#1d4ed8;
 }
 
-/* 작은 스마트폰 */
+/* 작은 스마트폰 대응 */
 @media(max-width:380px){
-  body{padding:10px 5px 25px}
-  h1{font-size:23px}
-  .day h2{font-size:21px}
-  th:first-child{width:102px}
-  td.t{font-size:15px;padding:11px 3px}
-  td.a{padding:11px 7px}
-  td.a b{font-size:19px}
-  td small{font-size:15px}
-  th{font-size:15px}
+  body{padding:12px 6px 25px}
+  h1{font-size:24px}
+  .day h2{font-size:22px}
+  table{border-spacing:0 8px; padding:4px 6px 6px;}
+  th:first-child{width:104px}
+  td.t{font-size:16px; padding:12px 4px}
+  td.a{padding:12px 9px}
+  td.a b{font-size:20px}
+  td small{font-size:16px}
+  th{font-size:16px}
+  .cp{font-size:15px; padding:7px 11px;}
 }
 </style>
 </head>
@@ -399,6 +400,7 @@ document.querySelectorAll('td.a small')
     },1800);
   });
 
+  s.appendChild(document.createElement('br'));
   s.appendChild(b);
 });
 
