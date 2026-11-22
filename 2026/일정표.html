@@ -1,275 +1,180 @@
 <!doctype html>
 <html lang="ko">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>용우회 1박 2일 일정</title>
-  <style>
-:root{
-  --bg:#ffffff;
-  --text:#111827;
-  --line:#cbd5e1;
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  padding:12px 10px 24px;
-  background:var(--bg);
-  color:var(--text);
-  font-family:-apple-system,"Apple SD Gothic Neo",
-  "Malgun Gothic","Noto Sans KR",sans-serif;
-  line-height:1.4;
-}
-
-/* 전체 제목 */
-h1{
-  font-size:24px;
-  font-weight:900;
-  text-align:center;
-  color:#0f172a;
-  margin:4px 0 16px;
-}
-
-/* 날짜 카드 */
-.day{
-  background:#ffffff;
-  border:2px solid #94a3b8;
-  border-radius:14px;
-  overflow:hidden;
-  margin-bottom:20px;
-  box-shadow:0 3px 8px rgba(0,0,0,0.06);
-}
-
-/* 날짜 제목 */
-.day h2{
-  margin:0;
-  padding:12px 14px;
-  background:#1e3a8a;
-  color:#ffffff;
-  font-size:21px;
-  font-weight:900;
-  border-bottom:2px solid #94a3b8;
-  letter-spacing:-0.5px;
-}
-
-/* 1열 일정 목록 컨테이너 */
-.list{
-  padding:10px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-/* 개별 일정 카드 (완전한 1열 수직 배치) */
-.item{
-  padding:11px 13px;
-  border:1.5px solid var(--line);
-  border-radius:10px;
-  background:#ffffff;
-}
-
-/* 시간 */
-.time{
-  display:inline-block;
-  background:#eff6ff;
-  color:#1d4ed8;
-  border:1px solid #bfdbfe;
-  font-size:15px;
-  font-weight:900;
-  padding:2px 8px;
-  border-radius:6px;
-  margin-bottom:4px;
-}
-
-/* 일정 제목 */
-.title{
-  font-size:20px;
-  font-weight:900;
-  color:#0f172a;
-  word-break:keep-all;
-}
-
-/* 주소 및 네이버 검색 링크 영역 */
-.desc-wrap {
-  margin-top:4px;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:6px;
-}
-
-.desc{
-  font-size:16px;
-  font-weight:700;
-  color:#374151;
-  word-break:keep-all;
-}
-
-/* 네이버 검색 버튼 스타일 */
-.naver-btn {
-  display:inline-block;
-  background:#03c75a;
-  color:#ffffff;
-  font-size:13px;
-  font-weight:700;
-  text-decoration:none;
-  padding:2px 6px;
-  border-radius:4px;
-  white-space:nowrap;
-}
-.naver-btn:hover {
-  background:#02b350;
-}
-
-/* 식사 일정 (주황 계열) */
-.item.meal{
-  border-color:#fed7aa;
-  background:#fffdfa;
-}
-.item.meal .time{
-  background:#fff7ed;
-  color:#c2410c;
-  border-color:#fed7aa;
-}
-.item.meal .title{
-  color:#9a3412;
-}
-
-/* 휴식 일정 (녹색 계열) */
-.item.rest{
-  border-color:#bbf7d0;
-  background:#fafefc;
-}
-.item.rest .time{
-  background:#f0fdf4;
-  color:#15803d;
-  border-color:#bbf7d0;
-}
-.item.rest .title{
-  color:#166534;
-}
-
-/* 작은 스마트폰 대응 */
-@media(max-width:380px){
-  body{padding:10px 6px 20px}
-  h1{font-size:22px}
-  .day h2{font-size:19px; padding:10px 12px}
-  .item{padding:10px 10px}
-  .time{font-size:14px; padding:2px 6px}
-  .title{font-size:18px}
-  .desc{font-size:15px}
-}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>용우회 1박 2일 일정 (수첩형)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 14px 10px 28px;
+    background: #ffffff;
+    color: #000000;
+    font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    line-height: 1.45;
+  }
+  h1 {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    margin: 4px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #000000;
+  }
+  .day-box {
+    border: 2.5px solid #000000;
+    margin-bottom: 24px;
+  }
+  .day-title {
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 900;
+    padding: 11px 14px;
+    border-bottom: 2.5px solid #000000;
+  }
+  .schedule-item {
+    padding: 13px 14px;
+    border-bottom: 1.5px solid #94a3b8;
+  }
+  .schedule-item:last-child {
+    border-bottom: none;
+  }
+  .schedule-item.meal {
+    background: #fefce8;
+  }
+  .time-row {
+    font-size: 16px;
+    font-weight: 900;
+    color: #1d4ed8;
+    margin-bottom: 3px;
+  }
+  .schedule-item.meal .time-row {
+    color: #b45309;
+  }
+  .place-row {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000000;
+    word-break: keep-all;
+  }
+  .addr-row {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #334155;
+    word-break: keep-all;
+  }
+  .naver-btn {
+    display: inline-block;
+    margin-top: 6px;
+    background: #03c75a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 3px 9px;
+    border-radius: 4px;
+  }
 </style>
- </head>
- <body>
-  <h1>용우회 일정표</h1>
+</head>
+<body>
 
-  <!-- 12월 19일 -->
-  <div class="day">
-   <h2>📅 12월 19일 (토)</h2>
-   <div class="list">
-    <div class="item">
-     <div class="time">10:00~11:00</div>
-     <div class="title">🤝 만남 - 통영마리나리조트 주차장2</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 통영시 도남동 645</span>
-      <a href="https://search.naver.com/search.naver?query=통영+마리나리조트+주차장2" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item">
-     <div class="time">11:00~12:00</div>
-     <div class="title">🚡 통영케이블카</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 통영시 발개로 205</span>
-      <a href="https://search.naver.com/search.naver?query=통영케이블카" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item meal">
-     <div class="time">12:00~13:30</div>
-     <div class="title">🍚 점심 - 토담 (찜 전문)</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 통영시 봉수로 67 (봉평동 224-7)</span>
-      <a href="https://search.naver.com/search.naver?query=통영+봉수로 67+찜" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item">
-     <div class="time">13:30~15:30</div>
-     <div class="title">☕ 카페 - 드스텔라</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 통영시 운하1길 65 (미수동 1-1)</span>
-      <a href="https://search.naver.com/search.naver?query=통영+드스텔라" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item">
-     <div class="time">15:30~16:00</div>
-     <div class="title">🌊 해저터널</div>
-     <div class="desc-wrap">
-      <span class="desc">공영주차장: 경남 통영시 봉평동 446-20</span>
-      <a href="https://search.naver.com/search.naver?query=통영+해저터널공영주차장" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item">
-     <div class="time">16:00~17:00</div>
-     <div class="title">🌳 이순신공원</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 통영시 이순신공원길 205</span>
-      <a href="https://search.naver.com/search.naver?query=통영+이순신공원" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item">
-     <div class="time">17:00~18:00</div>
-     <div class="title">🏨 경남교육종합복지관 - 주차</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 고성군 회화면 회진로 296</span>
-      <a href="https://search.naver.com/search.naver?query=경남교육종합복지관" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item meal">
-     <div class="time">18:00~20:00</div>
-     <div class="title">🐟 저녁 - 당포횟집</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 고성군 회화면 당항만로 1007 (당항리 506-7)</span>
-      <a href="https://search.naver.com/search.naver?query=고성+당포횟집" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item rest">
-     <div class="time">20:00~</div>
-     <div class="title">🏡 경남교육종합복지관 - 휴식</div>
-    </div>
-   </div>
+<h1>용우회 1박 2일 일정표</h1>
+
+<div class="day-box">
+  <div class="day-title">📅 12월 19일 (토)</div>
+
+  <div class="schedule-item">
+    <div class="time-row">10:00 ~ 11:00</div>
+    <div class="place-row">🤝 만남 - 통영마리나리조트 주차장2</div>
+    <div class="addr-row">경남 통영시 도남동 645</div>
+    <a href="https://search.naver.com/search.naver?query=통영+마리나리조트+주차장2" target="_blank" class="naver-btn">네이버 검색</a>
   </div>
 
-  <!-- 12월 20일 -->
-  <div class="day">
-   <h2>📅 12월 20일 (일)</h2>
-   <div class="list">
-    <div class="item meal">
-     <div class="time">07:30~08:30</div>
-     <div class="title">🍜 아침 - 누룽지, 라면</div>
-    </div>
-    <div class="item rest">
-     <div class="time">08:30~10:00</div>
-     <div class="title">☕ 복지관 시설이용 (커피 등)</div>
-    </div>
-    <div class="item">
-     <div class="time">10:00~12:00</div>
-     <div class="title">🏞️ 당항포 관광</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 고성군 회화면 당항만로 1116 (당항포관광지)</span>
-      <a href="https://search.naver.com/search.naver?query=당항포관광지" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-    <div class="item meal">
-     <div class="time">12:00~13:00</div>
-     <div class="title">🍲 점심 - 진국본가</div>
-     <div class="desc-wrap">
-      <span class="desc">경남 고성군 회화면 관인로 20 (배둔리 1288-74)</span>
-      <a href="https://search.naver.com/search.naver?query=고성+진국본가" target="_blank" class="naver-btn">네이버 검색</a>
-     </div>
-    </div>
-   </div>
+  <div class="schedule-item">
+    <div class="time-row">11:00 ~ 12:00</div>
+    <div class="place-row">🚡 통영케이블카</div>
+    <div class="addr-row">경남 통영시 발개로 205</div>
+    <a href="https://search.naver.com/search.naver?query=통영케이블카" target="_blank" class="naver-btn">네이버 검색</a>
   </div>
- </body>
+
+  <div class="schedule-item meal">
+    <div class="time-row">12:00 ~ 13:30 [점심]</div>
+    <div class="place-row">🍚 토담 (찜 전문)</div>
+    <div class="addr-row">경남 통영시 봉수로 67 (봉평동 224-7)</div>
+    <a href="https://search.naver.com/search.naver?query=통영+봉수로 67+찜" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">13:30 ~ 15:30</div>
+    <div class="place-row">☕ 카페 - 드스텔라</div>
+    <div class="addr-row">경남 통영시 운하1길 65 (미수동 1-1)</div>
+    <a href="https://search.naver.com/search.naver?query=통영+드스텔라" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">15:30 ~ 16:00</div>
+    <div class="place-row">🌊 해저터널</div>
+    <div class="addr-row">공영주차장: 경남 통영시 봉평동 446-20</div>
+    <a href="https://search.naver.com/search.naver?query=통영+해저터널공영주차장" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">16:00 ~ 17:00</div>
+    <div class="place-row">🌳 이순신공원</div>
+    <div class="addr-row">경남 통영시 이순신공원길 205</div>
+    <a href="https://search.naver.com/search.naver?query=통영+이순신공원" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">17:00 ~ 18:00</div>
+    <div class="place-row">🏨 경남교육종합복지관 - 주차</div>
+    <div class="addr-row">경남 고성군 회화면 회진로 296</div>
+    <a href="https://search.naver.com/search.naver?query=경남교육종합복지관" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item meal">
+    <div class="time-row">18:00 ~ 20:00 [저녁]</div>
+    <div class="place-row">🐟 당포횟집</div>
+    <div class="addr-row">경남 고성군 회화면 당항만로 1007 (당항리 506-7)</div>
+    <a href="https://search.naver.com/search.naver?query=고성+당포횟집" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">20:00 ~</div>
+    <div class="place-row">🏡 경남교육종합복지관 - 휴식</div>
+  </div>
+</div>
+
+<div class="day-box">
+  <div class="day-title">📅 12월 20일 (일)</div>
+
+  <div class="schedule-item meal">
+    <div class="time-row">07:30 ~ 08:30 [아침]</div>
+    <div class="place-row">🍜 누룽지, 라면</div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">08:30 ~ 10:00</div>
+    <div class="place-row">☕ 복지관 시설이용 (커피 등)</div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time-row">10:00 ~ 12:00</div>
+    <div class="place-row">🏞️ 당항포 관광</div>
+    <div class="addr-row">경남 고성군 회화면 당항만로 1116 (당항포관광지)</div>
+    <a href="https://search.naver.com/search.naver?query=당항포관광지" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+
+  <div class="schedule-item meal">
+    <div class="time-row">12:00 ~ 13:00 [점심]</div>
+    <div class="place-row">🍲 진국본가</div>
+    <div class="addr-row">경남 고성군 회화면 관인로 20 (배둔리 1288-74)</div>
+    <a href="https://search.naver.com/search.naver?query=고성+진국본가" target="_blank" class="naver-btn">네이버 검색</a>
+  </div>
+</div>
+
+</body>
 </html>
