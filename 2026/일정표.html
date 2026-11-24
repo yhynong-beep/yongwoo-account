@@ -66,15 +66,35 @@
     color: #334155;
     word-break: keep-all;
   }
+  .note-box {
+    margin-top: 8px;
+    padding: 8px 10px;
+    background: #eff6ff;
+    border-left: 4px solid #1d4ed8;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1e3a8a;
+    word-break: keep-all;
+  }
+  .schedule-item.meal .note-box {
+    background: #fff7ed;
+    border-left-color: #c2410c;
+    color: #9a3412;
+  }
+  .btn-group {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
   .naver-btn {
     display: inline-block;
-    margin-top: 6px;
     background: #03c75a;
     color: #ffffff;
     font-size: 14px;
     font-weight: 800;
     text-decoration: none;
-    padding: 3px 9px;
+    padding: 4px 9px;
     border-radius: 4px;
   }
 </style>
@@ -90,56 +110,76 @@
     <div class="time-row">10:00 ~ 11:00</div>
     <div class="place-row">🤝 만남 - 통영마리나리조트 주차장2</div>
     <div class="addr-row">경남 통영시 도남동 645</div>
-    <a href="https://search.naver.com/search.naver?query=통영+마리나리조트+주차장2" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=통영+마리나리조트+주차장2" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item">
     <div class="time-row">11:00 ~ 12:00</div>
     <div class="place-row">🚡 통영케이블카</div>
     <div class="addr-row">경남 통영시 발개로 205</div>
-    <a href="https://search.naver.com/search.naver?query=통영케이블카" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=통영케이블카" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item meal">
     <div class="time-row">12:00 ~ 13:30 [점심]</div>
     <div class="place-row">🍚 토담 (찜 전문)</div>
     <div class="addr-row">경남 통영시 봉수로 67 (봉평동 224-7)</div>
-    <a href="https://search.naver.com/search.naver?query=통영+봉수로 67+찜" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=통영+봉수로 67+찜" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item">
     <div class="time-row">13:30 ~ 15:30</div>
     <div class="place-row">☕ 카페 - 드스텔라</div>
     <div class="addr-row">경남 통영시 운하1길 65 (미수동 1-1)</div>
-    <a href="https://search.naver.com/search.naver?query=통영+드스텔라" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=통영+드스텔라" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item">
     <div class="time-row">15:30 ~ 16:00</div>
     <div class="place-row">🌊 해저터널</div>
     <div class="addr-row">공영주차장: 경남 통영시 봉평동 446-20</div>
-    <a href="https://search.naver.com/search.naver?query=통영+해저터널공영주차장" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=통영+해저터널공영주차장" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item">
     <div class="time-row">16:00 ~ 17:00</div>
-    <div class="place-row">🌳 이순신공원</div>
-    <div class="addr-row">경남 통영시 이순신공원길 205</div>
-    <a href="https://search.naver.com/search.naver?query=통영+이순신공원" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="place-row">🌳 이순신공원 또는 동피랑 벽화마을 (당일 택일)</div>
+    <div class="addr-row">이순신공원: 경남 통영시 이순신공원길 205</div>
+    <div class="addr-row">동피랑 벽화마을: 경상남도 통영시 태평동 528-1</div>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=통영+이순신공원" target="_blank" class="naver-btn">이순신공원 검색</a>
+      <a href="https://search.naver.com/search.naver?query=동피랑+벽화마을" target="_blank" class="naver-btn">동피랑 벽화마을 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item">
     <div class="time-row">17:00 ~ 18:00</div>
     <div class="place-row">🏨 경남교육종합복지관 - 주차</div>
     <div class="addr-row">경남 고성군 회화면 회진로 296</div>
-    <a href="https://search.naver.com/search.naver?query=경남교육종합복지관" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="note-box">🚗 차량 이동: 승용차 5대 중 3대는 주차하고, 2대에 나누어 타고 기와실비로 이동</div>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=경남교육종합복지관" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item meal">
     <div class="time-row">18:00 ~ 20:00 [저녁]</div>
-    <div class="place-row">🐟 당포횟집</div>
-    <div class="addr-row">경남 고성군 회화면 당항만로 1007 (당항리 506-7)</div>
-    <a href="https://search.naver.com/search.naver?query=고성+당포횟집" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="place-row">🍲 기와실비</div>
+    <div class="addr-row">경남 고성군 회화면 배둔로 14-7</div>
+    <div class="note-box">🚕 복귀 안내: 승용차 1대만 복지관으로 돌아오고, 나머지 1대는 기와실비에 둔 채 택시를 타고 복지관으로 복귀 (택시비는 회비에서 지급)</div>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=고성+기와실비" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item">
@@ -165,14 +205,19 @@
     <div class="time-row">10:00 ~ 12:00</div>
     <div class="place-row">🏞️ 당항포 관광</div>
     <div class="addr-row">경남 고성군 회화면 당항만로 1116 (당항포관광지)</div>
-    <a href="https://search.naver.com/search.naver?query=당항포관광지" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=당항포관광지" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 
   <div class="schedule-item meal">
     <div class="time-row">12:00 ~ 13:00 [점심]</div>
     <div class="place-row">🍲 진국본가</div>
     <div class="addr-row">경남 고성군 회화면 관인로 20 (배둔리 1288-74)</div>
-    <a href="https://search.naver.com/search.naver?query=고성+진국본가" target="_blank" class="naver-btn">네이버 검색</a>
+    <div class="note-box">🚗 차량 회수: 점심 식사 후 기와실비에 주차해 둔 승용차 1대를 찾아 귀가</div>
+    <div class="btn-group">
+      <a href="https://search.naver.com/search.naver?query=고성+진국본가" target="_blank" class="naver-btn">네이버 검색</a>
+    </div>
   </div>
 </div>
 
